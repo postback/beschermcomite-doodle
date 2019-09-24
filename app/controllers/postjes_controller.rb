@@ -1,5 +1,5 @@
 class PostjesController < ApplicationController
-  before_filter :authenticate
+  before_action :authenticate
 
   # GET /postjes
   # GET /postjes.json

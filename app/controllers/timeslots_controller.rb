@@ -1,5 +1,5 @@
 class TimeslotsController < ApplicationController
-  before_filter :authenticate
+  before_action :authenticate
 
   # GET /timeslots
   # GET /timeslots.xml

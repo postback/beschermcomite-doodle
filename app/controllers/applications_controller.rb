@@ -1,5 +1,5 @@
 class ApplicationsController < ApplicationController
-  before_filter :authenticate
+  before_action :authenticate
 
   def index
     @applications = Application.all
