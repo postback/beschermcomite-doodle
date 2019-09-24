@@ -1,0 +1,25 @@
+<%= render :partial => 'application/menu' %>
+
+<h1>Listing postjes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @postjes.each do |postje| %>
+  <tr>
+    <td><%= postje.name %></td>
+    <td><%= link_to 'Show', postje %></td>
+    <td><%= link_to 'Edit', edit_postje_path(postje) %></td>
+    <td><%= link_to 'Destroy', postje, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Postje', new_postje_path %>

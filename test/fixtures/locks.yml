@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  postje_id: 1
+  timeslot_id: 1
+
+two:
+  postje_id: 1
+  timeslot_id: 1

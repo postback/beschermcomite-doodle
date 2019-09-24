@@ -1,0 +1,21 @@
+<%= form_for(@postje) do |f| %>
+  <% if @postje.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@postje.errors.count, "error") %> prohibited this postje from being saved:</h2>
+
+      <ul>
+      <% @postje.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

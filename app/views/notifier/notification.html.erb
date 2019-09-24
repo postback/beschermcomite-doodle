@@ -1,0 +1,20 @@
+<p>Hallo <%= @volunteer.name %>,</p>
+
+<p>Iemand (waarschijnlijk uzelf) heeft u als vrijwillige aangeduid om te helpen op "<%= Settings.event_name %>" (<%= Settings.event_date %>) voor de volgende taken:</p>
+
+<ul>
+<% @volunteer.applications.each do |application| %>
+    <li><%= application.postje.name %>: <%= application.timeslot.name %></li>
+<% end %>
+</ul>
+
+<p>U gaf "<%= @volunteer.leerling %>" als leerling, en "<%= @volunteer.klas %>" als klas aan.</p>
+
+<p>U kan het volledige uurrooster zien op <%= link_to 'deze link', :host => 'jdc.cottyn.be', :controller => 'schedule', :action => 'show'  %>.</p>
+
+<p>Indien u niet betrokken bent, of indien deze inschrijving niet correct is, gelieve dan zo snel mogelijk <%= Settings.event_owner %> te contacteren.</p>
+
+<p>Ook voor eventuele wijzigingen aan uw inschrijving kan u <%= Settings.event_owner %> contacteren.</p>
+
+<p>Hartelijk dank voor uw hulp,
+het Beschermcomit&eacute;</p>

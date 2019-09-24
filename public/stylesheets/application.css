@@ -1,0 +1,107 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+#menu li {
+    float: left;
+    margin-left: 2em;
+}
+div.hour { width: 22%; float: left}
+
+
+#wrapper {
+  position: fixed;
+  left:0; right:0; top: 0; bottom:0;
+
+}
+#wrapper #shadow {
+    background-color: #000;
+    position: absolute;
+    left:0; right:0; top: 0; bottom:0;
+    zoom: 1;
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+    z-index: 10;
+  }
+
+#wrapper #box {
+    position: relative;
+    width: 300px;
+    top: 150px;
+    left: 50%;
+    margin-left: -173px;
+    z-index: 100;
+    background-color: white;
+    border: 3px black solid;
+    padding: 20px;
+  }
+
+
+td, th {
+    border: 1px black solid;
+    padding:3px;
+}
+th { background-color: #ddd;}
+td { vertical-align: top;}
+table {
+    border-collapse: collapse;
+    border: 3px black solid;
+    width: 95%;
+   margin: 1em;
+}
+td ul { padding-left: 2em; }
+button { margin: 1em; }
+table#schedule input[type="checkbox"] { float: right; }

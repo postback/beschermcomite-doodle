@@ -1,0 +1,12 @@
+<%= render :partial => 'application/menu' %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @postje.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_postje_path(@postje) %> |
+<%= link_to 'Back', postjes_path %>
