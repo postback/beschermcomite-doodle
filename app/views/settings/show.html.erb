@@ -5,10 +5,10 @@
 
 
 <%= form_tag settings_path, :method => 'put' do %>
-    Naam: <%= text_field_tag :name, Settings.event_name %><br>
-    Datum: <%= text_field_tag :date, Settings.event_date %><br>
-    Description: <%= text_area_tag :desc, Settings.event_desc %><br>
-    Mail To/From: <%= text_field_tag :owner, Settings.event_owner %><br>
+    Naam: <%= text_field_tag :name, @settings.event_name %><br>
+    Datum: <%= text_field_tag :date, @settings.event_date %><br>
+    Description: <%= text_area_tag :desc, @settings.event_desc %><br>
+    Mail To/From: <%= text_field_tag :owner, @settings.event_owner %><br>
     <br clear="all"><br>
 
     <table>
