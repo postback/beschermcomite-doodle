@@ -2,7 +2,7 @@ class SettingsController < ApplicationController
   before_action :authenticate
 
   def show
-    @postjes = Postje.scoped
+    @postjes = Postje.all
     @timeslots = Timeslot.order('`order`')
     @locks = Lock.all.map {|l| "#{l.timeslot_id}::#{l.postje_id}"}
     @notes = Hash.new('')
