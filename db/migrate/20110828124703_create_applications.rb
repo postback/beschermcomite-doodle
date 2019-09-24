@@ -1,4 +1,4 @@
-class CreateApplications < ActiveRecord::Migration
+class CreateApplications < ActiveRecord::Migration[5.0]
   def self.up
     create_table :applications do |t|
       t.integer :volunteer_id

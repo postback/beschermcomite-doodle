@@ -1,4 +1,4 @@
-class CreateLocks < ActiveRecord::Migration
+class CreateLocks < ActiveRecord::Migration[5.0]
   def self.up
     create_table :locks do |t|
       t.integer :postje_id

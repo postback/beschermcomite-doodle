@@ -1,4 +1,4 @@
-class AddOrderToTimeslots < ActiveRecord::Migration
+class AddOrderToTimeslots < ActiveRecord::Migration[5.0]
   def self.up
     add_column :timeslots, :order, :integer
   end

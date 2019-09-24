@@ -1,4 +1,4 @@
-class AddLeerlingKlasToVolunteer < ActiveRecord::Migration
+class AddLeerlingKlasToVolunteer < ActiveRecord::Migration[5.0]
   def self.up
     add_column :volunteers, :klas, :string
     add_column :volunteers, :leerling, :string

@@ -1,4 +1,4 @@
-class AddNoteToNotes < ActiveRecord::Migration
+class AddNoteToNotes < ActiveRecord::Migration[5.0]
   def self.up
     add_column :notes, :note, :string
   end

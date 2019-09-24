@@ -2,71 +2,73 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `rails
+# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110921161114) do
+ActiveRecord::Schema.define(version: 2011_09_21_161114) do
 
-  create_table "applications", :force => true do |t|
-    t.integer  "volunteer_id"
-    t.integer  "postje_id"
-    t.string   "hour"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "timeslot_id"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "applications", id: :serial, force: :cascade do |t|
+    t.integer "volunteer_id"
+    t.integer "postje_id"
+    t.string "hour"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "timeslot_id"
   end
 
-  create_table "locks", :force => true do |t|
-    t.integer  "postje_id"
-    t.integer  "timeslot_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "locks", id: :serial, force: :cascade do |t|
+    t.integer "postje_id"
+    t.integer "timeslot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "notes", :force => true do |t|
-    t.integer  "postje_id"
-    t.integer  "timeslot_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "note"
+  create_table "notes", id: :serial, force: :cascade do |t|
+    t.integer "postje_id"
+    t.integer "timeslot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "note"
   end
 
-  create_table "postjes", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "postjes", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "settings", :force => true do |t|
-    t.string   "var",                       :null => false
-    t.text     "value"
-    t.integer  "target_id"
-    t.string   "target_type", :limit => 30
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "settings", id: :serial, force: :cascade do |t|
+    t.string "var", null: false
+    t.text "value"
+    t.integer "target_id"
+    t.string "target_type", limit: 30
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["target_type", "target_id", "var"], name: "index_settings_on_target_type_and_target_id_and_var", unique: true
   end
 
-  add_index "settings", ["target_type", "target_id", "var"], :name => "index_settings_on_target_type_and_target_id_and_var", :unique => true
-
-  create_table "timeslots", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "order"
+  create_table "timeslots", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "order"
   end
 
-  create_table "volunteers", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "klas"
-    t.string   "leerling"
+  create_table "volunteers", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "klas"
+    t.string "leerling"
   end
 
 end

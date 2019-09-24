@@ -1,11 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '6.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+# Removed as we will be moving to postgresql 
+# gem 'sqlite3-ruby', :require => 'sqlite3'
+
+# So, we add postgresql
+gem 'pg'
 
 # Use unicorn as the web server
 # gem 'unicorn'

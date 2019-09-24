@@ -1,4 +1,4 @@
-class AddTimeslotIdToApplications < ActiveRecord::Migration
+class AddTimeslotIdToApplications < ActiveRecord::Migration[5.0]
   def self.up
     add_column :applications, :timeslot_id, :integer
   end

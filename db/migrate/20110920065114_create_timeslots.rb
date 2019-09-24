@@ -1,4 +1,4 @@
-class CreateTimeslots < ActiveRecord::Migration
+class CreateTimeslots < ActiveRecord::Migration[5.0]
   def self.up
     create_table :timeslots do |t|
       t.string :name
