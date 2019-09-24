@@ -1,12 +1,11 @@
 class SettingsController < ApplicationController
-  before_action :authenticate
+  before_action :authenticate, :get_setting
 
   def show
     @postjes = Postje.all
     @timeslots = Timeslot.order('`order`')
     @locks = Lock.all.map {|l| "#{l.timeslot_id}::#{l.postje_id}"}
     @notes = Hash.new('')
-    @settings = Settings
     Note.all.each {|n| @notes["#{n.timeslot_id}::#{n.postje_id}"] = n.note}
   end
 
