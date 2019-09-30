@@ -1,7 +1,8 @@
 class ScheduleController < ApplicationController
+
   def show
     @postjes = Postje.all
-    @timeslots = Timeslot.order('`order`')
+    @timeslots = Timeslot.order('sorting')
     @locks = Lock.all.map {|l| "#{l.timeslot_id}::#{l.postje_id}"}
     @notes = Hash.new('')
     Note.all.each {|n| @notes["#{n.timeslot_id}::#{n.postje_id}"] = n.note}
@@ -9,7 +10,7 @@ class ScheduleController < ApplicationController
 
   def update
     if params[:volunteers_for]
-      volunteer = Volunteer.find_or_create_by_email_and_name(params[:email], params[:name])
+      volunteer = Volunteer.find_or_create_by(:email => params[:email], :name => params[:name])
       volunteer.klas ||= params[:klas]
       volunteer.leerling ||= params[:leerling]
       volunteer.save
@@ -23,7 +24,7 @@ class ScheduleController < ApplicationController
       Notifier.notification(volunteer).deliver
       flash[:notice] = "Uw gegevens werden geregistreerd"
     else
-      flash[:notice] = "Er is een fout gebeurd. U dient eerst een of meerdere posten te selecteren door het vakje rechtsboven aan te vinken."
+      flash[:notice] = "Vergeten selecteren? Kies eerst een of meerdere posten door het vakje aan te vinken."
     end
     redirect_to schedule_path
   end

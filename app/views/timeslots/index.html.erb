@@ -14,7 +14,7 @@
 <% @timeslots.each do |timeslot| %>
   <tr>
     <td><%= timeslot.name %></td>
-    <td><%= timeslot.order %></td>
+    <td><%= timeslot.sorting %></td>
     <td><%= link_to 'Show', timeslot %></td>
     <td><%= link_to 'Edit', edit_timeslot_path(timeslot) %></td>
     <td><%= link_to 'Destroy', timeslot, :confirm => 'Are you sure?', :method => :delete %></td>

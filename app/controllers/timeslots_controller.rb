@@ -4,7 +4,7 @@ class TimeslotsController < ApplicationController
   # GET /timeslots
   # GET /timeslots.xml
   def index
-    @timeslots = Timeslot.order('`order`')
+    @timeslots = Timeslot.order('sorting')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,7 +42,7 @@ class TimeslotsController < ApplicationController
   # POST /timeslots
   # POST /timeslots.xml
   def create
-    @timeslot = Timeslot.new(params[:timeslot])
+    @timeslot = Timeslot.new(timeslot_params)
 
     respond_to do |format|
       if @timeslot.save
@@ -61,7 +61,7 @@ class TimeslotsController < ApplicationController
     @timeslot = Timeslot.find(params[:id])
 
     respond_to do |format|
-      if @timeslot.update_attributes(params[:timeslot])
+      if @timeslot.update_attributes(timeslot_params)
         format.html { redirect_to(@timeslot, :notice => 'Timeslot was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -82,4 +82,9 @@ class TimeslotsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def timeslot_params
+    params.require(:timeslot).permit(:name, :sorting)
+  end
+
 end

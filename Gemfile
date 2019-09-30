@@ -11,6 +11,18 @@ gem 'rails', '6.0.0'
 # So, we add postgresql
 gem 'pg'
 
+gem 'rspec'
+
+gem 'rspec-rails', '~> 3.8'
+
+gem 'jquery-rails'
+
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+gem 'rails-settings-cached', '~> 2.0'
+
+gem 'bootstrap', '~> 4.3.1'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

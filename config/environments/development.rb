@@ -11,6 +11,8 @@ Jdc2::Application.configure do
 
   config.eager_load = false
 
+  config.hosts << "bc-doodle.local"
+
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
   # config.action_view.debug_rjs             = true

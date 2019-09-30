@@ -39,10 +39,14 @@ class PostjesController < ApplicationController
     @postje = Postje.find(params[:id])
   end
 
+  def postje_params
+    params.require(:postje).permit(:name)
+  end
+
   # POST /postjes
   # POST /postjes.json
   def create
-    @postje = Postje.new(params[:postje])
+    @postje = Postje.new(postje_params)
 
     respond_to do |format|
       if @postje.save
@@ -61,7 +65,7 @@ class PostjesController < ApplicationController
     @postje = Postje.find(params[:id])
 
     respond_to do |format|
-      if @postje.update_attributes(params[:postje])
+      if @postje.update_attributes(postje_params)
         format.html { redirect_to @postje, :notice => 'Postje was successfully updated.' }
         format.json { head :ok }
       else

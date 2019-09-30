@@ -4,36 +4,31 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= form_tag settings_path, :method => 'put' do %>
-    Naam: <%= text_field_tag :name, Settings.event_name %><br>
-    Datum: <%= text_field_tag :date, Settings.event_date %><br>
-    Description: <%= text_area_tag :desc, Settings.event_desc %><br>
-    Mail To/From: <%= text_field_tag :owner, Settings.event_owner %><br>
-    <br clear="all"><br>
 
-    <table>
-      <thead>
-        <tr>
-          <th width="80">uur/taak</th>
-          <% @postjes.each do |postje| %>
-            <th><%= postje.name %></th>
-          <% end %>
-        </tr>
-      </thead>
-      <tbody>
-        <% @timeslots.each do |timeslot| %>
-          <tr>
-            <th width="80"><%= timeslot.name %></th>
-              <% @postjes.each do |postje| %>
-                <td>
-                  Locked? <%= check_box_tag 'lock[]', "#{timeslot.id}::#{postje.id}", @locks.include?("#{timeslot.id}::#{postje.id}") %><br>
-                  Note: <%= text_area_tag "note[#{timeslot.id}::#{postje.id}]", @notes["#{timeslot.id}::#{postje.id}"] %>
-                </td>
-              <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+<%= form_for(Setting.new, url: settings_path) do |f| %>
+  <div class="form-group">
+    <label class="control-label">Naam</label>
+    <%= f.text_field :event_name, value: Setting.event_name, class: "form-control"  %>
+  </div>
 
-    <%= submit_tag 'Opslaan' %>
+  <div class="form-group">
+    <label class="control-label">Datum</label>
+    <%= f.text_field :event_date, value: Setting.event_date, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label">Uren</label>
+    <%= f.text_field :event_hours, value: Setting.event_hours, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label">Beschrijving</label>
+    <%= f.text_field :event_desc, value: Setting.event_desc, class: "form-control"  %>
+  </div>
+
+   <%= submit_tag 'Opslaan' %>
+
+
+
+
 <% end %>

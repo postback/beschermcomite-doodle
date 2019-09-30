@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2011_09_21_161114) do
+ActiveRecord::Schema.define(version: 2011_09_21_155731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2011_09_21_161114) do
     t.integer "timeslot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "note"
   end
 
   create_table "postjes", id: :serial, force: :cascade do |t|
@@ -59,7 +58,7 @@ ActiveRecord::Schema.define(version: 2011_09_21_161114) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "order"
+    t.integer "sorting"
   end
 
   create_table "volunteers", id: :serial, force: :cascade do |t|

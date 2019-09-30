@@ -7,7 +7,7 @@ Jdc2::Application.routes.draw do
       delete 'opkuis'
     end
   end
-  resource :settings, :only => [:show, :update]
+  resource :settings
   resource :schedule, :only => [:show, :update], :controller => :schedule  # The priority is based upon order of creation:
   # first created -> highest priority.
 
