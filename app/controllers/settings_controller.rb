@@ -1,5 +1,5 @@
 class SettingsController < ApplicationController
-    before_action :get_setting, only: [:edit, :update]
+    before_action :authenticate, :get_setting, only: [:edit, :update]
 
     def show
     end
@@ -15,7 +15,7 @@ class SettingsController < ApplicationController
 
     private
       def setting_params
-        params.require(:setting).permit(:host, :user_limits, :admin_emails,
-          :captcha_enable, :notification_options)
+        params.require(:setting).permit(:event_name, :event_desc, :event_hours,
+          :event_date)
       end
   end
