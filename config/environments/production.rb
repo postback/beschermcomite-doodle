@@ -12,7 +12,7 @@ Jdc2::Application.configure do
   config.action_controller.perform_caching = true
 
   # Specifies the header that your server uses for sending files
-  config.action_dispatch.x_sendfile_header = "X-Sendfile"
+  config.action_dispatch.x_sendfile_header = nil
 
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
@@ -49,15 +49,16 @@ Jdc2::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  config.assets.compile = false
+
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-     :address              => "mail.cottyn.be",
-     :port                 => 587,
-     :user_name            => 'berschermcomite@jdc.cottyn.be',
-     :password             => '5DD58603-2688-4448-BB39-D87E5429FABF',
-     :authentication       => 'plain',
-     :openssl_verify_mode => 'none',
-     :enable_starttls_auto => true 
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'infinite-depths-16073.herokuapp.com',
+    :authentication => :plain,
   }
 end
