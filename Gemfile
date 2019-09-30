@@ -24,8 +24,6 @@ gem 'rails-settings-cached', '~> 2.0'
 
 gem 'bootstrap', '~> 4.3.1'
 
-gem 'puma'
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
