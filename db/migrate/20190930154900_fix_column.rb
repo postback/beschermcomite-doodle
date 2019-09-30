@@ -1,4 +1,4 @@
-class FixColumnName < ActiveRecord::Migration
+class FixColumn < ActiveRecord::Migration
   def self.up
     rename_column :timeslots, :order, :sorting
   end
