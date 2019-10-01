@@ -1,5 +1,5 @@
 class SettingsController < ApplicationController
-    before_action :authenticate, :get_setting, only: [:edit, :update]
+    before_action :get_setting, only: [:edit, :update], :authenticate
 
     def show
     end
