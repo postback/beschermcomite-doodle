@@ -1,25 +1,41 @@
 <%= render :partial => 'application/menu' %>
 
-<h1>Listing postjes</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="row">
+  <div class="col">
 
-<% @postjes.each do |postje| %>
-  <tr>
-    <td><%= postje.name %></td>
-    <td><%= link_to 'Show', postje %></td>
-    <td><%= link_to 'Edit', edit_postje_path(postje) %></td>
-    <td><%= link_to 'Destroy', postje, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+    <div class="row">
+      <div class="col-sm-6">
+        <h1 class="h3">Listing postjes</h1>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to 'New Postje', new_postje_path, :class => 'btn btn-primary float-right' %>
+      </div>
+    </div>
 
-<br />
 
-<%= link_to 'New Postje', new_postje_path %>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @postjes.each do |postje| %>
+            <tr>
+              <td><%= postje.name %></td>
+              <td><%= link_to 'Edit', edit_postje_path(postje), :class => 'btn btn-primary' %></td>
+              <td><%= link_to 'Destroy', postje, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-light' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

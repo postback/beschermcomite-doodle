@@ -37,6 +37,7 @@ class PostjesController < ApplicationController
   # GET /postjes/1/edit
   def edit
     @postje = Postje.find(params[:id])
+    render :edit
   end
 
   def postje_params

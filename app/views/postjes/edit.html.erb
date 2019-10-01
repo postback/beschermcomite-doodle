@@ -2,7 +2,11 @@
 
 <h1>Editing postje</h1>
 
-<%= render 'form' %>
+<%= form_with model: @postje, class: "form" do |f| %>
+  <%= f.text_field :name %>
+  <%= f.number_field :sorting, in: 1..90, step: 1 %>
+  <%= f.submit "Save" %>
+<% end %>
 
 <%= link_to 'Show', @postje %> |
 <%= link_to 'Back', postjes_path %>

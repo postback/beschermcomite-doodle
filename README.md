@@ -18,6 +18,7 @@ There's still a lot of work left to get this properly rewritten.
 * Remove the hard coded authentication
 * Give the back-end some _bootstrap love_
 * Rename some models to English (from dutch)
+* Look at the current ruby and see if it needs rewriting to new more modern concepts
 * Add (unit) tests
 * Remove redundant pieces of code, including all old assets (css, js, ...)
 * Get it to work with SASS and a build flow
