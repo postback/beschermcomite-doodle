@@ -1,7 +1,7 @@
 class ScheduleController < ApplicationController
 
   def show
-    @postjes = Postje.all
+    @postjes = Postje.order('sorting')
     @timeslots = Timeslot.order('sorting')
     @locks = Lock.all.map {|l| "#{l.timeslot_id}::#{l.postje_id}"}
     @notes = Hash.new('')

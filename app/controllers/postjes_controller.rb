@@ -40,7 +40,7 @@ class PostjesController < ApplicationController
   end
 
   def postje_params
-    params.require(:postje).permit(:name)
+    params.require(:postje).permit(:name, :sorting)
   end
 
   # POST /postjes
