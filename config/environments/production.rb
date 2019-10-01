@@ -58,7 +58,7 @@ Jdc2::Application.configure do
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'infinite-depths-16073.herokuapp.com',
+    :domain         => 'mg.gasparddecoligny.gent',
     :authentication => :plain,
   }
 end
