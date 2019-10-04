@@ -177,6 +177,8 @@ GEM
     tilt (2.0.10)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -197,6 +199,7 @@ DEPENDENCIES
   rspec-rails (~> 3.8)
   sass-rails
   sprockets-rails
+  uglifier
 
 RUBY VERSION
    ruby 2.6.4p104

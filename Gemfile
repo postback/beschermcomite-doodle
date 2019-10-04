@@ -30,6 +30,8 @@ gem 'airbrake'
 
 gem 'airbrake-ruby', '~> 4.6'
 
+gem 'uglifier'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
