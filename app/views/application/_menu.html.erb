@@ -32,7 +32,8 @@
           Administration
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Settings", { controller: "settings", action: "show"}, class: "dropdown-item" %>
+          <%= link_to "Event settings", { controller: "settings", action: "show"}, class: "dropdown-item" %>
+          <%= link_to "Schedule settings", { controller: "schedule", action: "settings"}, class: "dropdown-item" %>
         </div>
       </li>
     </ul>

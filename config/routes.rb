@@ -8,7 +8,14 @@ Jdc2::Application.routes.draw do
     end
   end
   resource :settings
-  resource :schedule, :only => [:show, :update], :controller => :schedule  # The priority is based upon order of creation:
+  resource :schedule, :only => [:show, :update, :settings], :controller => :schedule  # The priority is based upon order of creation:
+  resources :schedule do
+    collection do
+      get :settings
+      post 'save_settings'
+    end
+  end
+
   # first created -> highest priority.
 
   # Sample of regular route:

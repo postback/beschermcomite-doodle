@@ -1,0 +1,39 @@
+<%= render :partial => 'application/menu' %>
+
+<h1>Schedule settings</h1>
+<p id="notice"><%= notice %></p>
+
+
+
+<%= form_for(Setting.new, url: save_settings_schedule_index_path) do |f| %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th width="80">uur/taak</th>
+        <% @postjes.each do |postje| %>
+          <th><%= postje.name %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @timeslots.each do |timeslot| %>
+        <tr>
+          <th width="80"><%= timeslot.name %></th>
+            <% @postjes.each do |postje| %>
+              <td>
+                Locked? <%= check_box_tag 'lock[]', "#{timeslot.id}::#{postje.id}", @locks.include?("#{timeslot.id}::#{postje.id}") %><br>
+                Note: <%= text_area_tag "note[#{timeslot.id}::#{postje.id}]", @notes["#{timeslot.id}::#{postje.id}"] %>
+              </td>
+            <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+    <%= submit_tag 'Opslaan' %>
+
+   <%= submit_tag 'Save', :class => 'btn btn-primary' %>
+
+
+<% end %>
