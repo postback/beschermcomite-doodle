@@ -40,7 +40,7 @@ class PostjesController < ApplicationController
 
     respond_to do |format|
       if @postje.save
-        format.html { redirect_to postjes_url, :notice => 'Postje was successfully created.' }
+        format.html { redirect_to postjes_url }
         format.json { render :json => @postje, :status => :created, :location => @postje }
       else
         format.html { render :action => "new" }
@@ -56,7 +56,7 @@ class PostjesController < ApplicationController
 
     respond_to do |format|
       if @postje.update_attributes(postje_params)
-        format.html { redirect_to postjes_url, :notice => 'Postje was successfully updated.' }
+        format.html { redirect_to postjes_url, :success => 'Postje was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

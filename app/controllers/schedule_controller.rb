@@ -22,16 +22,16 @@ class ScheduleController < ApplicationController
         appl.save
       end
       Notifier.notification(volunteer).deliver
-      flash[:notice] = "Uw gegevens werden geregistreerd"
+      flash[:success] = "Uw gegevens werden geregistreerd"
     else
-      flash[:notice] = "Vergeten selecteren? Kies eerst een of meerdere posten door het vakje aan te vinken."
+      flash[:warning] = "Vergeten selecteren? Kies eerst een of meerdere posten door het vakje aan te vinken."
     end
     redirect_to schedule_path
   end
 
   # GET /schedule/settings
   def settings
-    @postjes = Postje.all
+    @postjes = Postje.order('sorting')
     @timeslots = Timeslot.order('sorting')
     @locks = Lock.all.map {|l| "#{l.timeslot_id}::#{l.postje_id}"}
     @notes = Hash.new('')
@@ -54,8 +54,8 @@ class ScheduleController < ApplicationController
       n.save
     end
 
-    flash[:notice] = "Settings werden opgeslaan."
-    redirect_to '/settings'
+    flash[:success] = "Settings werden opgeslaan."
+    redirect_to '/schedule/settings'
   end
 
 end

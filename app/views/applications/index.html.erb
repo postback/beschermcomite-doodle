@@ -1,32 +1,51 @@
 <%= render :partial => 'application/menu' %>
 
-<h1>Listing "job" applications</h1>
+<br/>
 
-<%= link_to 'Allemaal opkuisen in ene keer', opkuis_applications_path, :confirm => 'Are you sure?', :method => :delete %>
+<div class="row">
+  <div class="col">
 
-<table>
-  <tr>
-    <th>postje</th>
-    <th>uur</th>
-    <th>naam</th>
-    <th>email</th>
-    <th>leerling</th>
-    <th>klas</th>
-    <th></th>
-  </tr>
+    <div class="row">
+      <div class="col-sm-6">
+        <h1 class="h3">Volunteers</h1>
+      </div>
+      <div class="col-sm-6">
+        <%= link_to 'Purge everything', opkuis_applications_path, :confirm => 'Are you sure?', :method => :delete, :class => 'btn  btn-light float-right' %>
+      </div>
+    </div>
 
-<% @applications.each do |app| %>
-  <tr>
-    <td><%= app.postje.try(:name) %></td>
-    <td><%= app.timeslot.try(:name) %></td>
-    <td><%= app.volunteer.try(:name) %></td>
-    <td><%= app.volunteer.try(:email) %></td>
-    <td><%= app.volunteer.try(:leerling) %></td>
-    <td><%= app.volunteer.try(:klas) %></td>
-    <td><%= link_to 'Destroy', app, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+    <br/>
 
-<br />
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Job</th>
+            <th scope="col">Timeslot</th>
+            <th scope="col">Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Kid's name</th>
+            <th scope="col">Kid's class</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <% @applications.each do |app| %>
+            <tr>
+              <td><%= app.postje.try(:name) %></td>
+              <td><%= app.timeslot.try(:name) %></td>
+              <td><%= app.volunteer.try(:name) %></td>
+              <td><%= app.volunteer.try(:email) %></td>
+              <td><%= app.volunteer.try(:leerling) %></td>
+              <td><%= app.volunteer.try(:klas) %></td>
+              <td><%= link_to 'Destroy', app, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-light' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div><!-- .table-responsive -->
+  </div><!-- .col -->
+</div><!-- .row -->
+
+<%= render :partial => 'application/confirm_delete' %>

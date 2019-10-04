@@ -13,7 +13,7 @@ There's still a lot of work left to get this properly rewritten.
 
 
 ## Need to fix
-* Get the entire application working again (some things like config and destroy don't work)
+* ~Get the entire application working again (some things like config, destroy and purge everything don't work)~
 * Remove the hard coded authentication
 * Maybe check the SIGTERM issue, caused by [dyno sleeping](https://devcenter.heroku.com/articles/free-dyno-hours), maybe use the `at_exit` [see here](https://github.com/honeybadger-io/honeybadger-ruby/issues/267#issuecomment-373906051) and [here](https://devcenter.heroku.com/articles/what-happens-to-ruby-apps-when-they-are-restarted)
 * Get that [PROCFILE fixed and use puma](https://devcenter.heroku.com/articles/getting-started-with-rails4#procfile)?
@@ -21,12 +21,12 @@ There's still a lot of work left to get this properly rewritten.
 * Rename some models to English (from dutch)
 * Look at the current ruby and see if it needs rewriting to new more modern concepts
 * Add (unit) tests
-* Remove redundant pieces of code, including all old assets (css, js, ...)
+* ~Remove redundant pieces of code, including all old assets (css, js, ...)~
 * Get it to work with SASS and a build flow
 * Move the entire concept from one setting defining the event (and having to destroy everything for any subsequent new event), to being able to schedule multiple events
 * HTML e-mail
-* Some UX changes are needed too
+* Some UX changes are needed too (the schedule is still bare bones and maybe not so easy to use)
 * Check this entire thing against multiple devices (now it's more of bootstrap-gives-me-responsiveness-by-default-so-i-wont-test)
 * Work on accessibility
-* Complete on the docs (as if I'll ever get so far...)
+* Complete the docs (as if I'll ever get so far...)
 * Get things like AirBrake configurable or something

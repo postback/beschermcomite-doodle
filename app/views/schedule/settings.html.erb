@@ -1,39 +1,48 @@
 <%= render :partial => 'application/menu' %>
 
 <h1>Schedule settings</h1>
-<p id="notice"><%= notice %></p>
 
-
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %> alert-dismissible show">
+    <%= value %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
 
 <%= form_for(Setting.new, url: save_settings_schedule_index_path) do |f| %>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th width="80">uur/taak</th>
-        <% @postjes.each do |postje| %>
-          <th><%= postje.name %></th>
-        <% end %>
-      </tr>
-    </thead>
-    <tbody>
-      <% @timeslots.each do |timeslot| %>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class="thead-light">
         <tr>
-          <th width="80"><%= timeslot.name %></th>
-            <% @postjes.each do |postje| %>
-              <td>
-                Locked? <%= check_box_tag 'lock[]', "#{timeslot.id}::#{postje.id}", @locks.include?("#{timeslot.id}::#{postje.id}") %><br>
-                Note: <%= text_area_tag "note[#{timeslot.id}::#{postje.id}]", @notes["#{timeslot.id}::#{postje.id}"] %>
-              </td>
-            <% end %>
+          <th width="80">uur/taak</th>
+          <% @postjes.each do |postje| %>
+            <th><%= postje.name %></th>
+          <% end %>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @timeslots.each do |timeslot| %>
+          <tr>
+            <th width="80"><%= timeslot.name %></th>
+              <% @postjes.each do |postje| %>
+                <td>
+                  <div class="form-group form-check">
+                    <%= check_box_tag 'lock[]', "#{timeslot.id}::#{postje.id}", @locks.include?("#{timeslot.id}::#{postje.id}"), :class => 'form-check-input' %>
+                    <label>Locked:</label>
+                </div>
+                  <label>Note:</label> <%= text_area_tag "note[#{timeslot.id}::#{postje.id}]", @notes["#{timeslot.id}::#{postje.id}"], :class => 'form-control', :rows => 2 %>
+                </td>
+              <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-    <%= submit_tag 'Opslaan' %>
-
-   <%= submit_tag 'Save', :class => 'btn btn-primary' %>
+  <%= submit_tag 'Save', :class => 'btn btn-primary' %>
 
 
 <% end %>
