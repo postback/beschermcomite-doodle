@@ -1,5 +1,6 @@
 <%= render :partial => 'application/menu' %>
 
+<br/>
 
 <div class="row">
   <div class="col">
@@ -13,15 +14,14 @@
       </div>
     </div>
 
+    <br/>
 
     <div class="table-responsive">
       <table class="table table-hover">
-        <thead class="thead-dark">
+        <thead class="thead-light">
           <tr>
             <th scope="col">Name</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
 
@@ -29,13 +29,16 @@
           <% @postjes.each do |postje| %>
             <tr>
               <td><%= postje.name %></td>
-              <td><%= link_to 'Edit', edit_postje_path(postje), :class => 'btn btn-primary' %></td>
-              <td><%= link_to 'Destroy', postje, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-light' %></td>
+              <td>
+                <%= link_to 'Edit', edit_postje_path(postje), :class => 'btn btn-primary' %>
+                <%= link_to 'Destroy', postje, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-light' %>
+              </td>
             </tr>
           <% end %>
         </tbody>
       </table>
-    </div>
+    </div><!-- .table-responsive -->
+  </div><!-- .col -->
+</div><!-- .row -->
 
-  </div>
-</div>
+<%= render :partial => 'application/confirm_delete' %>

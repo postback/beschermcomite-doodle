@@ -51,6 +51,9 @@ Jdc2::Application.configure do
 
   config.assets.compile = false
 
+  config.assets.css_compressor = :yui
+  config.assets.js_compressor = :uglifier
+
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {

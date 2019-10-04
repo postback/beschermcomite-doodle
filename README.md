@@ -10,12 +10,13 @@ There's still a lot of work left to get this properly rewritten.
 ## How it works
 * Define basic event settings (its name, the date, ...) using the `/settings` route (that route is currently behind a username/password combo which is hard-coded)
 * Define `postjes` which is the actual job (the bar, the kitchen, cleaning, ...)
-* 
 
 
 ## Need to fix
 * Get the entire application working again (some things like config and destroy don't work)
 * Remove the hard coded authentication
+* Maybe check the SIGTERM issue, caused by [dyno sleeping](https://devcenter.heroku.com/articles/free-dyno-hours), maybe use the `at_exit` [see here](https://github.com/honeybadger-io/honeybadger-ruby/issues/267#issuecomment-373906051) and [here](https://devcenter.heroku.com/articles/what-happens-to-ruby-apps-when-they-are-restarted)
+* Get that [PROCFILE fixed and use puma](https://devcenter.heroku.com/articles/getting-started-with-rails4#procfile)?
 * Give the back-end some _bootstrap love_
 * Rename some models to English (from dutch)
 * Look at the current ruby and see if it needs rewriting to new more modern concepts

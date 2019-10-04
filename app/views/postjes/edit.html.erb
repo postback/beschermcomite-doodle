@@ -1,12 +1,15 @@
 <%= render :partial => 'application/menu' %>
 
-<h1>Editing postje</h1>
+<br/>
+<div class="row">
+  <div class="col-sm">
+    <h1>Editing postje</h1>
+  </div>
+  <div class="col-sm">
+    <%= link_to 'Back', postjes_path, :class => "btn btn-light" %>
+  </div>
+</div>
 
-<%= form_with model: @postje, class: "form" do |f| %>
-  <%= f.text_field :name %>
-  <%= f.number_field :sorting, in: 1..90, step: 1 %>
-  <%= f.submit "Save" %>
-<% end %>
+<%= render 'form' %>
 
-<%= link_to 'Show', @postje %> |
-<%= link_to 'Back', postjes_path %>
+
