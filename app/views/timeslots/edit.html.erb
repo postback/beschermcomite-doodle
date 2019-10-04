@@ -1,8 +1,13 @@
 <%= render :partial => 'application/menu' %>
 
-<h1>Editing timeslot</h1>
+<br/>
+<div class="row">
+  <div class="col-sm">
+    <h1>Editing timeslot</h1>
+  </div>
+  <div class="col-sm">
+    <%= link_to 'Back', timeslots_path, :class => "btn btn-light" %>
+  </div>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @timeslot %> |
-<%= link_to 'Back', timeslots_path %>
