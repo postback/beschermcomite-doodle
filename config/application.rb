@@ -41,7 +41,8 @@ module Jdc2
 
     at_exit do
       # Closes the default notifier.
-      Airbrake.close
+      # Breaks on deploy, it states we're closing an already closed sender
+      # Airbrake.close
     end
 
   end

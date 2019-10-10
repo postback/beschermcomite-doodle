@@ -17,7 +17,7 @@ There's still a lot of work left to get this properly rewritten.
 * Sorting is not pre-filled when editing Postje; and maybe we need to add it to the overview for visual reference
 * Allow editing Volunteers, they sometimes make mistakes
 * Remove the hard coded authentication on the back-end (yes, this repo contains a password, lol, but it's not mine)
-* Maybe check the SIGTERM issue, caused by [dyno sleeping](https://devcenter.heroku.com/articles/free-dyno-hours), maybe use the `at_exit` [see here](https://github.com/honeybadger-io/honeybadger-ruby/issues/267#issuecomment-373906051) and [here](https://devcenter.heroku.com/articles/what-happens-to-ruby-apps-when-they-are-restarted)
+* ~Maybe check the SIGTERM issue, caused by [dyno sleeping](https://devcenter.heroku.com/articles/free-dyno-hours), maybe use the `at_exit` [see here](https://github.com/honeybadger-io/honeybadger-ruby/issues/267#issuecomment-373906051) and [here](https://devcenter.heroku.com/articles/what-happens-to-ruby-apps-when-they-are-restarted)~
 * Get that [PROCFILE fixed and use puma](https://devcenter.heroku.com/articles/getting-started-with-rails4#procfile)?
 * ~Give the back-end some _bootstrap love_~
 * Rename some models to English (from dutch): postjes, for example
