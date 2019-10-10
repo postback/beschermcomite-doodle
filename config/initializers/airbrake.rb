@@ -52,6 +52,13 @@ Airbrake.configure do |c|
   # c.blacklist_keys = Rails.application.config.filter_parameters
 end
 
+Airbrake.add_filter do |notice|
+  # Ignore SIGTERM exceptions
+  if notice[:errors].any? { |error| error[:type] == 'SignalException' }
+    notice.ignore!
+  end
+end
+
 # A filter that collects request body information. Enable it if you are sure you
 # don't send sensitive information to Airbrake in your body (such as passwords).
 # https://github.com/airbrake/airbrake#requestbodyfilter
