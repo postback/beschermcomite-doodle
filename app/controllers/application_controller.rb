@@ -1,13 +1,19 @@
 class ApplicationController < ActionController::Base
-  #protect_from_forgery
+  before_action :check_environment
 
-  USER_NAME, PASSWORD = 'jdc', '5DD58603-2688-4448-BB39-D87E5429FABF'
+
+  def check_environment
+    if ENV['USERNAME'].nil? || ENV['PASSWORD'].nil?
+        redirect_to('/setup.html')
+        return
+    end
+  end
 
   protected
 
   def authenticate
-    authenticate_or_request_with_http_basic do |user_name, password|
-      user_name == USER_NAME && password == PASSWORD
+    authenticate_or_request_with_http_basic do |username, password|
+      username == ENV['USERNAME'] && password == ENV['PASSWORD']
     end
   end
 end
