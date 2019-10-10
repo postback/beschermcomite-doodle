@@ -21,6 +21,7 @@
         <thead class="thead-light">
           <tr>
             <th scope="col">Name</th>
+            <th scope="col">Sorting</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -29,6 +30,7 @@
           <% @timeslots.each do |timeslot| %>
             <tr>
               <td><%= timeslot.name %></td>
+              <td><%= timeslot.sorting %></td>
               <td>
                 <%= link_to 'Edit', edit_timeslot_path(timeslot), :class => 'btn btn-primary' %>
                 <%= link_to 'Destroy', timeslot, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-light' %>

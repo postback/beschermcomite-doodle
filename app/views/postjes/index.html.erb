@@ -21,6 +21,7 @@
         <thead class="thead-light">
           <tr>
             <th scope="col">Name</th>
+            <th scope="col">Sorting</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -29,6 +30,7 @@
           <% @postjes.each do |postje| %>
             <tr>
               <td><%= postje.name %></td>
+              <td><%= postje.sorting %></td>
               <td>
                 <%= link_to 'Edit', edit_postje_path(postje), :class => 'btn btn-primary' %>
                 <%= link_to 'Destroy', postje, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-light' %>
