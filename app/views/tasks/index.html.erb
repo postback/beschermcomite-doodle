@@ -7,10 +7,10 @@
 
     <div class="row">
       <div class="col-sm-6">
-        <h1 class="h3">Postjes</h1>
+        <h1 class="h3">Tasks</h1>
       </div>
       <div class="col-sm-6">
-        <%= link_to 'New Postje', new_postje_path, :class => 'btn btn-primary float-right' %>
+        <%= link_to 'New Task', new_task_path, :class => 'btn btn-primary float-right' %>
       </div>
     </div>
 
@@ -27,13 +27,13 @@
         </thead>
 
         <tbody>
-          <% @postjes.each do |postje| %>
+          <% @tasks.each do |task| %>
             <tr>
-              <td><%= postje.name %></td>
-              <td><%= postje.sorting %></td>
+              <td><%= task.name %></td>
+              <td><%= task.sorting %></td>
               <td>
-                <%= link_to 'Edit', edit_postje_path(postje), :class => 'btn btn-primary' %>
-                <%= link_to 'Destroy', postje, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-light' %>
+                <%= link_to 'Edit', edit_task_path(task), :class => 'btn btn-primary' %>
+                <%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-light' %>
               </td>
             </tr>
           <% end %>

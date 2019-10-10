@@ -38,13 +38,13 @@ class ApplicationsController < ApplicationController
   def opkuis
     Application.destroy_all
     respond_to do |format|
-      format.html { redirect_to postjes_url }
+      format.html { redirect_to tasks_url }
       format.json { head :no_content }
     end
   end
 
   def application_params
-    params.require(:application).permit(:timeslot_id,:postje_id,:hour)
+    params.require(:application).permit(:timeslot_id,:task_id,:hour)
   end
 
 end

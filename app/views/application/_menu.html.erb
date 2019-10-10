@@ -9,9 +9,9 @@
       <li class="nav-item <!-- current_page?(controller: 'schedule') -->">
         <%= link_to "Schedule", { controller: "schedule", action: "show"}, class: "nav-link" %>
       </li>
-      <li class="nav-item <%= "active" if current_page?(controller: 'postjes') %>">
-        <%= link_to "Postjes", { controller: "postjes", action: "index"}, class: "nav-link" %>
-        <% if current_page?(controller: 'postjes') %>
+      <li class="nav-item <%= "active" if current_page?(controller: 'tasks') %>">
+        <%= link_to "Tasks", { controller: "tasks", action: "index"}, class: "nav-link" %>
+        <% if current_page?(controller: 'tasks') %>
           <span class="sr-only">(current)</span></a>
         <% end %>
       </li>

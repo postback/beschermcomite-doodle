@@ -18,8 +18,8 @@
       <thead class="thead-light">
         <tr>
           <th width="80">uur/taak</th>
-          <% @postjes.each do |postje| %>
-            <th><%= postje.name %></th>
+          <% @tasks.each do |task| %>
+            <th><%= task.name %></th>
           <% end %>
         </tr>
       </thead>
@@ -27,13 +27,13 @@
         <% @timeslots.each do |timeslot| %>
           <tr>
             <th width="80"><%= timeslot.name %></th>
-              <% @postjes.each do |postje| %>
+              <% @tasks.each do |task| %>
                 <td>
                   <div class="form-group form-check">
-                    <%= check_box_tag 'lock[]', "#{timeslot.id}::#{postje.id}", @locks.include?("#{timeslot.id}::#{postje.id}"), :class => 'form-check-input' %>
+                    <%= check_box_tag 'lock[]', "#{timeslot.id}::#{task.id}", @locks.include?("#{timeslot.id}::#{task.id}"), :class => 'form-check-input' %>
                     <label>Locked:</label>
                 </div>
-                  <label>Note:</label> <%= text_area_tag "note[#{timeslot.id}::#{postje.id}]", @notes["#{timeslot.id}::#{postje.id}"], :class => 'form-control', :rows => 2 %>
+                  <label>Note:</label> <%= text_area_tag "note[#{timeslot.id}::#{task.id}]", @notes["#{timeslot.id}::#{task.id}"], :class => 'form-control', :rows => 2 %>
                 </td>
               <% end %>
           </tr>

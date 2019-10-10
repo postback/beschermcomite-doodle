@@ -1,7 +1,7 @@
 Jdc2::Application.routes.draw do
   resources :timeslots
 
-  resources :postjes
+  resources :tasks
   resources :applications, :only => [:index, :destroy, :edit, :update] do
     collection do
       delete 'opkuis'

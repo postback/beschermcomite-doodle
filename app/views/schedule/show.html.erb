@@ -17,8 +17,8 @@
         <thead class="thead-light">
           <tr>
             <th width="100"></th>
-            <% @postjes.each do |postje| %>
-              <th><%= postje.name %></th>
+            <% @tasks.each do |task| %>
+              <th><%= task.name %></th>
             <% end %>
           </tr>
         </thead>
@@ -26,12 +26,12 @@
           <% @timeslots.each do |timeslot| %>
             <tr>
               <th class="text-right"><%= timeslot.name %></th>
-                <% @postjes.each do |postje| %>
+                <% @tasks.each do |task| %>
                   <td>
-                    <%= check_box_tag('volunteers_for[]', "#{timeslot.id}::#{postje.id}", false) unless @locks.include?("#{timeslot.id}::#{postje.id}") %>
-                    <span class="note"><%= @notes["#{timeslot.id}::#{postje.id}"].html_safe %></span>
+                    <%= check_box_tag('volunteers_for[]', "#{timeslot.id}::#{task.id}", false) unless @locks.include?("#{timeslot.id}::#{task.id}") %>
+                    <span class="note"><%= @notes["#{timeslot.id}::#{task.id}"].html_safe %></span>
                     <ul>
-                    <% Application.where({:timeslot_id => timeslot.id, :postje_id => postje.id}).each do |app| %>
+                    <% Application.where({:timeslot_id => timeslot.id, :task_id => task.id}).each do |app| %>
                       <li><%= app.volunteer.name %></li>
                     <% end %>
                     </ul>
@@ -62,12 +62,12 @@
               <%= email_field_tag 'email', nil, :size => 40, :class => 'form-control', :autocomplete => 'off', :required => 'required' %>
             </div>
             <div class="form-group">
-              <label for="klas" class="col-form-label">Klas:</label>
-              <%= text_field_tag 'klas', nil, :size => 40, :class => 'form-control', :autocomplete => 'off' %>
+              <label for="grade" class="col-form-label">Grade:</label>
+              <%= text_field_tag 'grade', nil, :size => 40, :class => 'form-control', :autocomplete => 'off' %>
             </div>
             <div class="form-group">
-              <label for="leerling" class="col-form-label">Leerling:</label>
-              <%= text_field_tag 'leerling', nil, :size => 40, :class => 'form-control', :autocomplete => 'off' %>
+              <label for="pupil" class="col-form-label">Pupil:</label>
+              <%= text_field_tag 'pupil', nil, :size => 40, :class => 'form-control', :autocomplete => 'off' %>
             </div>
           </div>
           <div class="modal-footer">
