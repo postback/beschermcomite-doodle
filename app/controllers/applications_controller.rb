@@ -2,7 +2,7 @@ class ApplicationsController < ApplicationController
   before_action :authenticate
 
   def index
-    @applications = Application.all
+    @applications = Application.filter(params)
   end
 
   # GET /applications/1/edit

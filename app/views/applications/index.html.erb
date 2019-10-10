@@ -14,7 +14,29 @@
       </div>
     </div>
 
-    <br/>
+    <%= @result %>
+
+    <div class="card">
+      <div class="card-body">
+        <%= form_with url: applications_path, method: "get", :class => "row" do |form| %>
+          <div class="col-sm-3">
+            <%= form.select "timeslot", options_from_collection_for_select(Timeslot.all, "id", "name",params[:timeslot]), { :include_blank => true }, { :class => "form-control"} %>
+          </div>
+          <div class="col-sm-3">
+            <%= form.select "postje", options_from_collection_for_select(Postje.all, "id", "name",params[:postje]),  { :include_blank => true }, { :class => "form-control"} %>
+          </div>
+          <div class="col-sm-3">
+            <%= form.text_field "search", value: params[:search], :class => "form-control" %>
+          </div>
+          <div class="col-sm-3">
+            <%= form.submit 'Filter', :class=>"btn btn-primary" %>
+            <%= link_to 'Reset', applications_path, :method => :get, :class => 'btn  btn-link float-right' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <hr/>
 
     <div class="table-responsive">
       <table class="table table-hover">
