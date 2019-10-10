@@ -15,6 +15,7 @@ There's still a lot of work left to get this properly rewritten.
 ## Need to fix
 * ~Get the entire application working again (some things like config, destroy and purge everything don't work)~
 * ~Maybe we need to add it to the overview for visual reference~
+* Search volunteers
 * Allow editing Volunteers, they sometimes make mistakes
 * Remove the hard coded authentication on the back-end (yes, this repo contains a password, lol, but it's not mine)
 * ~Maybe check the SIGTERM issue, caused by [dyno sleeping](https://devcenter.heroku.com/articles/free-dyno-hours), maybe use the `at_exit` [see here](https://github.com/honeybadger-io/honeybadger-ruby/issues/267#issuecomment-373906051) and [here](https://devcenter.heroku.com/articles/what-happens-to-ruby-apps-when-they-are-restarted)~

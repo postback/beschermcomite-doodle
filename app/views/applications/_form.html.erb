@@ -1,0 +1,29 @@
+<%= form_for(@application) do |f| %>
+  <% if @application.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <strong><%= pluralize(@application.errors.count, "error") %> prohibited this application from being saved:</strong>
+
+      <ul>
+      <% @application.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :postje_id %>
+    <%= f.collection_select :postje_id, Postje.order(:sorting),:id,:name, {include_blank: false}, {:class => "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :timeslot_id %>
+    <%= f.collection_select :timeslot_id, Timeslot.order(:sorting),:id,:name, {include_blank: false}, {:class => "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :hour %>
+    <%= f.number_field :hour, :class => "form-control col-sm-2" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit 'Save' , :class => "btn btn-primary" %>
+  </div>
+<% end %>

@@ -2,7 +2,7 @@ Jdc2::Application.routes.draw do
   resources :timeslots
 
   resources :postjes
-  resources :applications, :only => [:index, :destroy] do
+  resources :applications, :only => [:index, :destroy, :edit, :update] do
     collection do
       delete 'opkuis'
     end
@@ -15,6 +15,8 @@ Jdc2::Application.routes.draw do
       post 'save_settings'
     end
   end
+
+  resources :volunteers
 
   # first created -> highest priority.
 

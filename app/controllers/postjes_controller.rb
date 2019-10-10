@@ -29,10 +29,6 @@ class PostjesController < ApplicationController
     render :edit
   end
 
-  def postje_params
-    params.require(:postje).permit(:name, :sorting)
-  end
-
   # POST /postjes
   # POST /postjes.json
   def create
@@ -76,4 +72,9 @@ class PostjesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def postje_params
+    params.require(:postje).permit(:name, :sorting)
+  end
+
 end
