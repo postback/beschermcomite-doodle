@@ -14,7 +14,7 @@ class Application < ActiveRecord::Base
     query = query.by_timeslot(params[:timeslot]) if params[:timeslot].present?
     query = query.by_task(params[:task]) if params[:task].present?
     query = query.joins(:volunteer).search(params[:search].strip.downcase) if params[:search].present?
-    query = query.order(:created_at)
+    query = query.order(created_at: :desc)
   end
 
 end
