@@ -21,7 +21,7 @@ There's still a lot of work left to get this properly rewritten.
 * ~Maybe check the SIGTERM issue, caused by [dyno sleeping](https://devcenter.heroku.com/articles/free-dyno-hours), maybe use the `at_exit` [see here](https://github.com/honeybadger-io/honeybadger-ruby/issues/267#issuecomment-373906051) and [here](https://devcenter.heroku.com/articles/what-happens-to-ruby-apps-when-they-are-restarted)~
 * Get that [PROCFILE fixed and use puma](https://devcenter.heroku.com/articles/getting-started-with-rails4#procfile)?
 * ~Give the back-end some _bootstrap love_~
-* Rename some models to English (from dutch): postjes, for example; also some params like klas, leerling, ...
+* ~Rename some models to English (from dutch): postjes, for example; also some params like klas, leerling, ...~
 * ~Remove redundant pieces of code, including all old assets (css, js, ...)~
 * Some UX changes are needed too (the schedule is still bare bones and maybe not so easy to use)
 * Get it to work with SASS and a build flow
