@@ -24,6 +24,9 @@ There's still a lot of work left to get this properly rewritten.
 * Rename some models to English (from dutch): postjes, for example; also some params like klas, leerling, ...
 * ~Remove redundant pieces of code, including all old assets (css, js, ...)~
 * Some UX changes are needed too (the schedule is still bare bones and maybe not so easy to use)
+* Sort volunteers/applications by last added, descending
+* Also allow some mass editing of volunteers
+* Add a honeypot
 * Get it to work with SASS and a build flow
 * Also Heroku requires pre-compiled assets? How can we add this to a deploy flow, with capistrano?
 * Look at the current ruby and see if it needs rewriting to new more modern concepts
