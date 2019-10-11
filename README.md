@@ -11,6 +11,14 @@ There's still a lot of work left to get this properly rewritten.
 * Define basic event settings (its name, the date, ...) using the `/settings` route (that route is currently behind a username/password combo which is hard-coded)
 * Define `postjes` which is the actual job (the bar, the kitchen, cleaning, ...)
 
+## Handy commands
+Precompile assets: `rake assets:precompile` 
+Precompile assets for production: `RAILS_ENV=production bundle exec rake assets:precompile`
+Run a specific db migration: `rake db:migrate:up VERSION=20191010150325
+Generate a new db migration file: `rails generate migration TheNameOfYourMigration`
+Get the current db version: `heroku rake db:version` 
+Get the current herokue db version: `heroku rake db:version`
+Get a list of all migrations run against the db: `rake db:migrate:status`
 
 ## Need to fix
 * ~Get the entire application working again (some things like config, destroy and purge everything don't work)~
@@ -24,11 +32,11 @@ There's still a lot of work left to get this properly rewritten.
 * ~Rename some models to English (from dutch): postjes, for example; also some params like klas, leerling, ...~
 * ~Remove redundant pieces of code, including all old assets (css, js, ...)~
 * Some UX changes are needed too (the schedule is still bare bones and maybe not so easy to use)
-* Sort volunteers/applications by last added, descending
+* ~Sort volunteers/applications by last added, descending~
 * Also allow some mass editing of volunteers
-* Add a honeypot
-* Get it to work with SASS and a build flow
-* Also Heroku requires pre-compiled assets? How can we add this to a deploy flow, with capistrano?
+* ~Add a honeypot~
+* ~Get it to work with SASS and a build flow (note: not needed as the assets:precompile seems to be a task on heroku)~
+* ~Also Heroku requires pre-compiled assets? How can we add this to a deploy flow, with capistrano? (note: not needed as the assets:precompile seems to be a task on heroku)~
 * Look at the current ruby and see if it needs rewriting to new more modern concepts
 * Add (unit) tests
 * Move the entire concept from one setting defining the event (and having to destroy everything for any subsequent new event), to being able to schedule multiple events

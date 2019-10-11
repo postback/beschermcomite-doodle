@@ -6,7 +6,7 @@
     <div><%= raw (' '+Setting.event_desc).gsub(/\n/, '<br>') %></div>
     <p id="notice"><%= notice %></p>
 
-    <%= form_tag schedule_path, :autocomplete => "off", :method => :put do %>
+    <%= form_tag schedule_path, :autocomplete => "off", :method => :put, :honeypot => true do %>
 
     <a href="#" data-toggle="modal" data-target="#register-form" class="btn btn-primary">Voeg mij toe voor deze selectie</a>
     <br/>

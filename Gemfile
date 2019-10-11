@@ -32,6 +32,8 @@ gem 'airbrake-ruby', '~> 4.6'
 
 gem 'uglifier'
 
+gem 'honeypot-captcha'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

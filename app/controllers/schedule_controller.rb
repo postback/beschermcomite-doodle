@@ -1,4 +1,5 @@
 class ScheduleController < ApplicationController
+  prepend_before_action :protect_from_spam, :only => [:update]
 
   def show
     @tasks = Task.order('sorting')
@@ -56,6 +57,17 @@ class ScheduleController < ApplicationController
 
     flash[:success] = "Settings werden opgeslaan."
     redirect_to '/schedule/settings'
+  end
+
+  def honeypot_fields
+    {
+      :comment_body => 'Your comment',
+      :birth_day => 'Your birthday'
+    }
+  end
+
+  def honeypot_style_class
+    'display-none'
   end
 
 end
