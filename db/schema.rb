@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_04_172500) do
+ActiveRecord::Schema.define(version: 2019_10_10_150325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "applications", id: :serial, force: :cascade do |t|
     t.integer "volunteer_id"
-    t.integer "postje_id"
+    t.integer "task_id"
     t.string "hour"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,25 +25,18 @@ ActiveRecord::Schema.define(version: 2019_10_04_172500) do
   end
 
   create_table "locks", id: :serial, force: :cascade do |t|
-    t.integer "postje_id"
+    t.integer "task_id"
     t.integer "timeslot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "notes", id: :serial, force: :cascade do |t|
-    t.integer "postje_id"
+    t.integer "task_id"
     t.integer "timeslot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "note"
-  end
-
-  create_table "postjes", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "sorting"
   end
 
   create_table "settings", id: :serial, force: :cascade do |t|
@@ -54,6 +47,13 @@ ActiveRecord::Schema.define(version: 2019_10_04_172500) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["target_type", "target_id", "var"], name: "index_settings_on_target_type_and_target_id_and_var", unique: true
+  end
+
+  create_table "tasks", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "sorting"
   end
 
   create_table "timeslots", id: :serial, force: :cascade do |t|
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2019_10_04_172500) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "klas"
-    t.string "leerling"
+    t.string "grade"
+    t.string "pupil"
   end
 
 end

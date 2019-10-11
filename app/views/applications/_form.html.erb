@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :postje_id %>
-    <%= f.collection_select :postje_id, Postje.order(:sorting),:id,:name, {include_blank: false}, {:class => "form-control"} %>
+    <%= f.label :task_id %>
+    <%= f.collection_select :task_id, Task.order(:sorting),:id,:name, {include_blank: false}, {:class => "form-control"} %>
   </div>
   <div class="form-group">
     <%= f.label :timeslot_id %>

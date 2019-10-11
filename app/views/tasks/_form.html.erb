@@ -1,10 +1,10 @@
-<%= form_for(@postje) do |f| %>
-  <% if @postje.errors.any? %>
+<%= form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
     <div class="alert alert-danger" role="alert">
-      <strong><%= pluralize(@postje.errors.count, "error") %> prohibited this postje from being saved:</strong>
+      <strong><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</strong>
 
       <ul>
-      <% @postje.errors.full_messages.each do |msg| %>
+      <% @task.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

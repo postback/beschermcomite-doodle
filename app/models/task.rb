@@ -1,4 +1,4 @@
-class Postje < ActiveRecord::Base
+class Task < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :sorting
   validates_uniqueness_of :name

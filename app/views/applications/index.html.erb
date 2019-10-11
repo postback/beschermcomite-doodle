@@ -23,7 +23,7 @@
             <%= form.select "timeslot", options_from_collection_for_select(Timeslot.all, "id", "name",params[:timeslot]), { :include_blank => true }, { :class => "form-control"} %>
           </div>
           <div class="col-sm-3">
-            <%= form.select "postje", options_from_collection_for_select(Postje.all, "id", "name",params[:postje]),  { :include_blank => true }, { :class => "form-control"} %>
+            <%= form.select "task", options_from_collection_for_select(Task.all, "id", "name",params[:task]),  { :include_blank => true }, { :class => "form-control"} %>
           </div>
           <div class="col-sm-3">
             <%= form.text_field "search", value: params[:search], :class => "form-control" %>
@@ -55,12 +55,12 @@
         <tbody>
           <% @applications.each do |app| %>
             <tr>
-              <td><%= app.postje.try(:name) %></td>
+              <td><%= app.task.try(:name) %></td>
               <td><%= app.timeslot.try(:name) %></td>
               <td><%= app.volunteer.try(:name) %> <%= link_to "Edit", { controller: "volunteers", action: "edit", id: app.volunteer.id}, {:class => 'btn btn-light btn-sm'} %></td>
               <td><%= mail_to app.volunteer.try(:email) %></td>
-              <td><%= app.volunteer.try(:leerling) %></td>
-              <td><%= app.volunteer.try(:klas) %></td>
+              <td><%= app.volunteer.try(:pupil) %></td>
+              <td><%= app.volunteer.try(:grade) %></td>
               <td><%= link_to 'Edit', { controller: "applications", action: "edit", id: app.id}, :class => 'btn btn-primary' %> <%= link_to 'Destroy', app, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-light' %></td>
             </tr>
           <% end %>

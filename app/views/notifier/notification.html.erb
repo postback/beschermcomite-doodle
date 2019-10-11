@@ -4,11 +4,11 @@
 
 <ul>
 <% @volunteer.applications.each do |application| %>
-    <li><%= application.postje.name %>: <%= application.timeslot.name %></li>
+    <li><%= application.task.name %>: <%= application.timeslot.name %></li>
 <% end %>
 </ul>
 
-<p>U gaf "<%= @volunteer.leerling %>" als leerling, en "<%= @volunteer.klas %>" als klas aan.</p>
+<p>U gaf "<%= @volunteer.pupil %>" als pupil, en "<%= @volunteer.grade %>" als grade aan.</p>
 
 <p>U kan het volledige uurrooster zien op <%= link_to 'deze link', :host => 'beschermcomite.be', :controller => 'schedule', :action => 'show'  %>.</p>
 
