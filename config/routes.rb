@@ -1,4 +1,4 @@
-Jdc2::Application.routes.draw do
+TaskScheduler::Application.routes.draw do
   resources :timeslots
 
   resources :tasks

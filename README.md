@@ -33,8 +33,9 @@ Get a list of all migrations run against the db: `rake db:migrate:status`
 * ~Remove redundant pieces of code, including all old assets (css, js, ...)~
 * Some UX changes are needed too (the schedule is still bare bones and maybe not so easy to use)
 * ~Sort volunteers/applications by last added, descending~
-* Add a print stylesheet
-* Replace the original Jdc2 module/namespace name
+* ~Add a print stylesheet~
+* Table header should be fixed to top
+* ~Replace the original Jdc2 module/namespace name~
 * Also allow some mass editing of volunteers
 * ~Add a honeypot~
 * ~Get it to work with SASS and a build flow (note: not needed as the assets:precompile seems to be a task on heroku)~

@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Jdc2::Application.load_tasks
+TaskScheduler::Application.load_tasks
