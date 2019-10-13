@@ -1,0 +1,11 @@
+/* line 1, app/assets/stylesheets/application.scss */
+.display-none {
+  display: none;
+}
+
+/* line 5, app/assets/stylesheets/application.scss */
+.table-fixedhead thead th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}

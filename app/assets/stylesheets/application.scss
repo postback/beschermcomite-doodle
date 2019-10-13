@@ -1,3 +1,8 @@
 .display-none {
   display: none;
 }
+
+.table-fixedhead thead th {
+  position: sticky;
+  top: 0;
+}
