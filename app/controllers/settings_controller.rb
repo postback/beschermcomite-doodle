@@ -16,6 +16,6 @@ class SettingsController < ApplicationController
   private
     def setting_params
       params.require(:setting).permit(:event_name, :event_desc, :event_hours,
-        :event_date)
+        :event_date, :event_owner)
     end
   end

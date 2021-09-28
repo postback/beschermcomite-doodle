@@ -26,6 +26,11 @@
     <%= f.text_field :event_desc, value: Setting.event_desc, class: "form-control"  %>
   </div>
 
+  <div class="form-group">
+    <label class="control-label">Owner e-mail</label>
+    <%= f.text_field :event_owner, value: Setting.event_owner, class: "form-control"  %>
+  </div>
+
    <%= submit_tag 'Save', :class => 'btn btn-primary' %>
 
 
