@@ -36,6 +36,8 @@ gem 'uglifier'
 
 gem 'honeypot-captcha'
 
+gem 'net-smtp', require: false
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
