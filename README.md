@@ -34,6 +34,7 @@ Get a list of all migrations run against the db: `rake db:migrate:status`
 * Some UX changes are needed too (the schedule is still bare bones and maybe not so easy to use)
 * ~Sort volunteers/applications by last added, descending~
 * ~Add a print stylesheet~
+* ~Upgrade heroku stack~
 * Table header should be fixed to top
 * ~Replace the original Jdc2 module/namespace name~
 * Also allow some mass editing of volunteers
