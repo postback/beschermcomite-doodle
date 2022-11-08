@@ -14,7 +14,7 @@ gem 'pg'
 
 gem 'rspec'
 
-gem 'webrick'
+gem 'puma'
 
 gem 'sass-rails'
 

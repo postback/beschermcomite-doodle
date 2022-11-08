@@ -102,6 +102,8 @@ GEM
       racc (~> 1.4)
     pg (1.4.4)
     popper_js (1.16.1)
+    puma (6.0.0)
+      nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
     rack-test (2.0.2)
@@ -181,7 +183,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
-    webrick (1.7.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -197,6 +198,7 @@ DEPENDENCIES
   honeypot-captcha
   jquery-rails
   pg
+  puma
   rails (= 6.0.0)
   rails-settings-cached (~> 2.0)
   rspec
@@ -204,7 +206,6 @@ DEPENDENCIES
   sass-rails
   sprockets-rails
   uglifier
-  webrick
 
 RUBY VERSION
    ruby 3.1.2p20
