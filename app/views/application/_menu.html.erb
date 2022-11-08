@@ -6,24 +6,24 @@
 
   <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item <!-- current_page?(controller: 'schedule') -->">
+      <li class="nav-item <!-- current_page?('schedule') -->">
         <%= link_to "Schedule", { controller: "schedule", action: "show"}, class: "nav-link" %>
       </li>
-      <li class="nav-item <%= "active" if current_page?(controller: 'tasks') %>">
+      <li class="nav-item <%= "active" if current_page?('tasks') %>">
         <%= link_to "Tasks", { controller: "tasks", action: "index"}, class: "nav-link" %>
-        <% if current_page?(controller: 'tasks') %>
+        <% if current_page?('tasks') %>
           <span class="sr-only">(current)</span></a>
         <% end %>
       </li>
-      <li class="nav-item <%= "active" if current_page?(controller: 'timeslots') %>">
+      <li class="nav-item <%= "active" if current_page?('timeslots') %>">
         <%= link_to "Timeslots", { controller: "timeslots", action: "index"}, class: "nav-link" %>
-        <% if current_page?(controller: 'timeslots') %>
+        <% if current_page?('timeslots') %>
           <span class="sr-only">(current)</span></a>
         <% end %>
       </li>
-      <li class="nav-item <%= "active" if current_page?(controller: 'applications') %>">
+      <li class="nav-item <%= "active" if current_page?('applications') %>">
         <%= link_to "Volunteers", { controller: "applications", action: "index"}, class: "nav-link" %>
-        <% if current_page?(controller: 'applications') %>
+        <% if current_page?('applications') %>
           <span class="sr-only">(current)</span></a>
         <% end %>
       </li>
