@@ -14,6 +14,8 @@ gem 'pg'
 
 gem 'rspec'
 
+gem 'webrick'
+
 gem 'sass-rails'
 
 gem 'rspec-rails', '~> 3.8'
