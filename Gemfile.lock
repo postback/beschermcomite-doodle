@@ -56,9 +56,9 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.1, >= 2.1.8)
-    airbrake (10.0.6)
-      airbrake-ruby (~> 4.13)
-    airbrake-ruby (4.15.0)
+    airbrake (13.0.3)
+      airbrake-ruby (~> 6.0)
+    airbrake-ruby (6.2.0)
       rbtree3 (~> 0.5)
     autoprefixer-rails (10.4.7.0)
       execjs (~> 2)
@@ -191,7 +191,7 @@ PLATFORMS
 
 DEPENDENCIES
   airbrake
-  airbrake-ruby (~> 4.6)
+  airbrake-ruby
   bootstrap (~> 4.3.1)
   honeypot-captcha
   jquery-rails

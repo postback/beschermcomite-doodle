@@ -28,7 +28,7 @@ gem 'bootstrap', '~> 4.3.1'
 
 gem 'airbrake'
 
-gem 'airbrake-ruby', '~> 4.6'
+gem 'airbrake-ruby'
 
 gem 'uglifier'
 
